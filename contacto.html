@@ -190,30 +190,7 @@
 	<script src="assets/js/slick.min.js"></script>
 	<script src="assets/js/aos.js"></script>
 	<script src="assets/js/efecto-pincel.js"></script>
-	<script src="assets/js/carrusel.js"></script>
 	<script src="assets/js/header.js"></script>
-	<script>
-		function actualizarRelojParaguay() {
-		  const opciones = {
-			timeZone: 'America/Asuncion',
-			hour: 'numeric',
-			minute: 'numeric',
-			second: 'numeric',
-			hour12: true
-		  };
-		
-		  const ahora = new Date();
-		  const horaParaguay = ahora.toLocaleTimeString('es-PY', opciones);
-		
-		  document.getElementById('reloj').textContent = horaParaguay;
-		}
-		
-		// Actualiza el reloj cada segundo
-		setInterval(actualizarRelojParaguay, 1000);
-		// Ejecuta inmediatamente al cargar
-		actualizarRelojParaguay();
-	</script>
-		
-
+	<script src="assets/js/carrusel.js"></script>
 </body>
 </html>

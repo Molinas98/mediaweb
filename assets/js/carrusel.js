@@ -9,7 +9,7 @@ $(document).ready(function () {
         speed: 1000,
         pauseOnHover: false,
         slidesToShow: 3.5,
-        slidesToScroll: 0.5,
+        slidesToScroll: 1,
         prevArrow: '<img class="prev" src="./assets/img/iconos/prev.svg">',
         nextArrow: '<img class="next" src="./assets/img/iconos/next.svg">',
         responsive: [

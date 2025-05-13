@@ -502,6 +502,17 @@
   section {
     padding: 2rem 0;
   }
+  .utilidades-section h2 {
+    font-size: 32px;
+    margin-bottom: 1.5rem;
+  }
+  .utilidades-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .beneficios3-section h3 {
+    font-size: 22px;
+  }
 }
 @media (max-width: 576px) {
   .navbar {
@@ -619,6 +630,15 @@
   }
   .cta-section .etapa {
     padding: 30px 20px;
+  }
+  .h-550 {
+    height: auto;
+  }
+  .h-550 h3 {
+    margin: 1rem 0;
+  }
+  .h-550 p {
+    margin-bottom: 1rem;
   }
 }
 @media (max-width: 480px) {

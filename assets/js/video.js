@@ -3,13 +3,27 @@ $(document).ready(function() {
   const video = $videoContainer.find('video')[0];
   const $verButton = $('.ver');
   const $icono = $verButton.find('i');
+  let hoverTimeout;
 
+  // Función para verificar el tamaño de pantalla
+  function isMobile() {
+    return window.matchMedia('(max-width: 991px)').matches;
+  }
 
-  // Configuración inicial
+  // Actualizar estado del botón
   function updateButton() {
     const isPlaying = !video.paused;
-    $verButton.css('opacity', isPlaying ? 0 : 1);
-    $verButton.css('pointer-events', isPlaying ? 'none' : 'auto');
+    
+    if (isMobile()) {
+      // Siempre visible en móviles
+      $verButton.css({'opacity': 1, 'pointer-events': 'auto'});
+    } else {
+      // Comportamiento original en desktop
+      $verButton.css({
+        'opacity': isPlaying ? 0 : 1,
+        'pointer-events': isPlaying ? 'none' : 'auto'
+      });
+    }
   }
 
   // Eventos del video
@@ -18,32 +32,28 @@ $(document).ready(function() {
   // Click del botón
   $verButton.on('click', function(e) {
     e.preventDefault();
-
-    if (video.paused) {
-      video.play();
-      $icono.removeClass('fa-play').addClass('fa-pause');
-      $videoContainer.removeClass('brillo')
-    } else {
-      video.pause();
-      $icono.removeClass('fa-pause').addClass('fa-play');
-      $videoContainer.addClass('brillo')
-    }
+    video[video.paused ? 'play' : 'pause']();
+    $icono.toggleClass('fa-play fa-pause');
+    $videoContainer.toggleClass('brillo', video.paused);
   });
 
-  // Hover manual con detección de botón
-  let hoverTimeout;
-  $videoContainer.add($verButton).on('mouseenter', function() {
-    clearTimeout(hoverTimeout);
-    if (!video.paused) {
-      $verButton.css({'opacity': 1, 'pointer-events': 'auto'});
-    }
-  }).on('mouseleave', function() {
-    if (!video.paused) {
-      hoverTimeout = setTimeout(() => {
-        $verButton.css({'opacity': 0, 'pointer-events': 'none'});
-      }, 300); // Tiempo para llegar al botón
-    }
-  });
+  // Comportamiento hover solo en desktop
+  if (!isMobile()) {
+    $videoContainer.add($verButton).on('mouseenter', function() {
+      clearTimeout(hoverTimeout);
+      if (!video.paused) {
+        $verButton.css({'opacity': 1, 'pointer-events': 'auto'});
+      }
+    }).on('mouseleave', function() {
+      if (!video.paused) {
+        hoverTimeout = setTimeout(() => {
+          $verButton.css({'opacity': 0, 'pointer-events': 'none'});
+        }, 300);
+      }
+    });
+  }
 
-  updateButton(); // Estado inicial
+  // Inicialización y evento de resize
+  updateButton();
+  $(window).on('resize', updateButton);
 });

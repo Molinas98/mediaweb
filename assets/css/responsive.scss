@@ -1,0 +1,800 @@
+@media (min-width: 1400px) {
+
+    .container {
+        max-width: 1300px;
+    }
+
+}
+
+@media (max-width: 1400px) {
+    .navbar {
+        padding-inline: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+    
+    .navbar {
+        font-size: 15px;
+        font-weight: 500;
+    
+        & .nav-acciones {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            & .categorias {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    .categorias li:not(.close):not(.mega-dropdown) {
+        transition: 0.2s all ease;
+        margin-bottom: 0;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        & a {
+            position: relative;
+            color: var(--blue);
+        }
+
+        &:not(.no_hover)::after{
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 8px;
+            background-image: url('../img/shapes/01.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            bottom: 6px;
+            // left: 0;
+            // right: 0;
+            // margin: 0 auto; 
+            transition: all 0.2s ease;
+        }
+
+        &.two:not(.no_hover):hover::after{
+            height: 11px;
+            background-image: url('../img/shapes/02.svg');
+            bottom: 4px;
+            transition: all 0.5s ease;
+        }
+
+        &:not(.no_hover):hover::after {
+            width: 100%;
+        }
+
+        &.two.activo::after{
+            height: 11px;
+            background-image: url('../img/shapes/02.svg');
+            bottom: 4px;
+            transition: all 0.5s ease;
+        }
+
+        &.activo::after {
+            width: 100%;
+        }
+    }
+
+    .funciones-section .funcion  p {
+        max-width: 100%;
+    }
+
+}
+@media (max-width: 1200px) {
+    nav {
+        height: 70px;
+        background: rgba(255,255,255,1);
+        top: 0px;
+    }
+
+    .logo {
+        padding: 0px;
+    
+        & img {
+            height: 50px;
+        }
+    }
+    
+    .navbar-nav {
+        padding: 0 !important;
+        align-items: start;
+
+        & .nuevo::before {
+            left: 90px;
+            top: -10px;
+        }
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0 !important;
+    }
+
+    .active::after {
+        display: none;
+    }
+
+    .categorias li:not(.close):not(.mega-dropdown) {
+        height: 50px;
+    }
+
+    .nav-link {
+        padding: 0;
+    }
+    
+    .categorias li {
+        padding-left: 10px;
+    }
+
+    .hamburger {
+        margin-top: -5px;
+    }
+
+    .hamburger {
+        zoom: 0.7;
+    }
+
+    .categorias > *:not(:last-child) {
+        width: 100%;
+        border-bottom: 1px solid var(--darkblue2);
+        z-index: 1;
+    }
+
+    .activo {
+        background-color: transparent;
+        font-weight: 700 !important;
+    }
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+        color: var(--blue);
+    }
+
+    .navbar ul li a:hover::after {
+        display: none !important;
+    }
+
+    .categorias li:not(.close):not(.mega-dropdown):not(.no_hover):hover::after{
+        display: none !important;
+    }
+
+    .offcanvas-body {
+        margin-top: 25px;
+    }
+
+    .portada-section {
+        margin-top: 0;
+        padding-top: 80px;
+    }
+
+    .politicas-section {
+        padding-top: 120px;
+    }
+
+    .portada-section .imagen-portada {
+        padding-bottom: 200px;
+    }
+
+    .portada-section .imagen-portada img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0.5;
+        width: 60%;
+    }
+
+    .wifi-section {
+
+        & .container {
+            padding: 83px 55px 83px 55px;
+        }
+    }
+
+    .procesos-section .proceso .ct-imagen img {
+        width: auto;
+        margin-inline: auto;
+    }
+
+    .relaciones-section .relacion .ct-imagen {
+        padding: 50px;
+    }
+
+    .galeria {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto 1fr auto;
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 1rem;
+    }
+
+    .div1 { grid-area: 2 / 1 / 3 / 3; }
+    .div2 { grid-area: 1 / 1 / 2 / 2; }
+    .div3 { grid-area: 1 / 2 / 2 / 3; }
+    .div4 { grid-area: 3 / 1 / 4 / 2; }
+    .div5 { grid-area: 3 / 2 / 4 / 3; }
+
+    .logistica-section .paso .ventaja {
+        text-align: center;
+    }
+
+    .panel-section .container .col-xxl-5 .ct {
+        align-items: center;
+
+        & h3 {
+            text-align: center !important;
+        }
+
+        & p {
+            max-width: 700px;
+            text-align: center !important;
+        }
+    }
+
+    .cta-section .etapa:nth-of-type(2) {
+        margin-left: 0rem;
+    }
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 991px) {
+
+}
+
+@media (max-width: 991px) {
+    footer .shape {
+        height: 50px;
+    }
+
+    footer .br {
+        border: none;
+    }
+
+    .portada-section {
+
+        & h1 {
+            margin-bottom: 2rem;
+        }
+
+        & .imagen-portada {
+            padding-bottom: 100px;
+        }
+
+        & .img-usuarios {
+            height: 60px;
+        }
+
+        & .usuarios {
+            & .digito {
+                font-size: 32px;
+            }
+    
+            & span {
+                font-size: 16px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    .tiendas-section {
+        position: relative;
+        height: auto;
+        padding: 80px 0 10px 0;
+
+        & p {
+            max-width: 100%;
+        }
+    }
+
+    .tiendas {
+        position: static;
+        margin-bottom: 0px;
+        margin-top: 100px;
+    
+        & .tienda img {
+            border-radius: 33px;
+            border-radius: 33px;
+            box-shadow: 0px 55px 40px -32px rgba(255, 255, 255, 0.22);
+            margin-bottom: 80px;
+        }
+    }
+
+    .panel-section .container .ct {
+        align-items: center;
+
+        & h3 {
+            text-align: center !important;
+        }
+
+        & ul {
+            margin: 0.5rem 0;
+        }
+
+        & p {
+            max-width: 100%;
+            text-align: center !important;
+        }
+    }
+
+    .bancard-section .container {
+        padding-inline: 50px;
+        padding-bottom: 100px;
+        color: var(--white);
+    }
+
+    .bancard-section .container::before {
+        height: 100%;
+    }
+
+    .bancard-section .img-float {
+        position: absolute;
+        width: 40%;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0.9;
+    }
+
+    .gerena-section {
+        & .ct {
+            border-radius: 200px;
+
+            & .info {
+                right: -60px;
+            }
+        }
+    }
+
+    .ft-56 {
+        font-size: 38px !important;
+        text-align: center;
+    }
+
+    .usuarios .nombre {
+        max-width: 100%;
+    }
+
+    .social_wifi-section h2 {
+        font-size: 80px;
+        letter-spacing: -3px;
+        margin-bottom: 1rem;
+
+        &::after {
+            top: -10px;
+            right: -120px;
+            zoom: 0.7;
+        }
+    }
+
+    .informacion .btn-base2 {
+        bottom: -9%;
+        right: -2%;
+    }
+
+    .beneficios3-section  h2 {
+        font-size: 32px;
+    }
+
+    .cta-section h2 {
+        font-size: 32px;
+    }
+
+    .cta-section .etapa:nth-of-type(2) {
+        margin-left: 5rem;
+    }
+
+    .cta-section .etapa:nth-of-type(3) {
+        margin-left: 7rem;
+    }
+
+
+    .logistica-section .paso .ver {
+            width: 75px;
+            height: 75px;
+            top: auto;
+            bottom: 15px;
+            right: auto;
+            left: 15px;
+        }
+} 
+
+
+@media (max-width: 767px) {
+    footer {
+        padding-top: 50px;
+    }
+
+    .portada-section {
+        padding-top: 50px;
+    }
+
+    .ventas-section .numero {
+        margin-bottom: 2rem;
+    }
+
+    .ventas-section .bg-orange {
+        padding: 50px 20px 0px 20px;
+    }
+
+    .frase2 {
+        position: relative;
+        margin-bottom: 150px;
+
+        & .iphone {
+            position: absolute;
+            right: -50px;
+            bottom: -100px;
+            z-index: -1;
+            opacity: 0.7;
+            transform: rotate(0deg);
+        }
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .panel-section  h3 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .paso h3 {
+        font-size: 20px !important;
+    }
+
+    .titulos h2 {
+        font-size: 26px;
+        text-wrap: balance;
+    }
+
+    .ft-20 {
+        font-size: 16px;
+
+    }
+
+    .wifi-section {
+
+        & .container {
+            padding: 50px 20px 50px 20px;
+        }
+
+        & .ft-20 {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        & .opcion {
+            & > div {
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    
+    .bancard-section .container {
+        padding-inline: 20px;
+        padding-bottom: 80px;
+        color: var(--white);
+    }
+
+    .bancard-section .img-float {
+        position: absolute;
+        width: 40%;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0.9;
+    }
+    
+    .gerena-section {
+
+        & .ct {
+            border-radius: 50px;
+            & .info {
+                background: rgba(#6D22FF, 0.8);
+                color: var(--white);
+                width: 400px;
+                min-height: 350px;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                transform: none;
+                margin: auto;
+                text-align: center;
+                max-width: 95%;
+            }
+        }
+    }
+
+    .plan.style2 .details {
+        justify-content: start;
+    }
+
+    .galeria {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-column-gap: 0px;
+        grid-row-gap: 1rem;
+
+        & .ct span {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .div1 { grid-area: 1 / 1 / 2 / 2; }
+    .div2 { grid-area: 2 / 1 / 3 / 2; }
+    .div3 { grid-area: 3 / 1 / 4 / 2; }
+    .div4 { grid-area: 5 / 1 / 6 / 2; }
+    .div5 { grid-area: 4 / 1 / 5 / 2; }
+
+    .social_wifi-section .beneficio  p {
+        max-width: 100%;
+    }
+
+    .cifras-section {
+         .col-sm-6 {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            height: 100%;
+         }
+
+        & .numero {
+            text-align: center;
+            margin-inline: auto;
+        }
+
+        & p {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .informacion .btn-base2 {
+        bottom: -9%;
+        right: -3%;
+    }
+
+    
+    .cta-section .etapa:nth-of-type(2) {
+        margin-left: 0rem;
+    }
+
+    .cta-section .etapa:nth-of-type(3) {
+        margin-left: 0rem;
+    }
+
+    .section-ubicacion {
+        padding: 80px 0;
+    }
+
+    .ct-mapa {
+        position: static;
+        width: 100%;
+        margin-top: 50px;
+    }
+} 
+
+@media (max-width: 576px) {
+    .navbar {
+        padding-inline: 10px;
+    }
+
+    .offcanvas-body {
+        padding-inline: 15px !important;
+    }
+
+    footer {
+        & h3 {
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 1.7;
+            letter-spacing: -2.88px;
+        }
+
+        & .ft-20 {
+            padding-top: 1rem;
+            margin-bottom: 1rem !important;
+        }
+
+        & .correo {
+            font-size: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        & h4 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        & .shape {
+            height: 30px;
+        }
+    }
+
+    
+    .portada-section .container {
+        position: relative;
+        padding: 0 20px 20px 20px;
+
+        & p {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        & .text-orange {
+            font-size: 22px;
+        }
+    }
+
+    .frase, .frase2 {
+        line-height: 1.5;
+    }
+
+    .planes-section .ahorra {
+        display: none;
+    }
+
+    .panel-section .container {
+        padding: 1.5rem;
+
+        & h3 {
+            font-size: 24px;
+        }
+    }
+
+    .bancard-section .img-float {
+        position: absolute;
+        width: 216px;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0.9;
+    }
+
+    .bancard-section p:nth-last-child(2) {
+        padding-right: 60px;
+    }
+
+    .bancard-section p:nth-last-child(1) {
+        padding-right: 125px;
+    }
+
+    .relaciones-section .relacion .ct-imagen {
+        padding: 30px;
+    }
+
+
+    .social_wifi-section h2 {
+        font-size: 50px;
+
+        &::after {
+            top: -40px;
+            right: -100px;
+            zoom: 0.5;
+        }
+    }
+
+    .social_wifi-section h4 {
+        font-size: 32px;
+        margin-top: -35px;
+    }
+
+    .ml--3  {
+        margin-left: 0 !important;
+    }
+
+    .informacion {
+        height: 90%;
+        width: 90%;
+
+        .between-y {
+            height: 100%;
+            align-items: start;
+        }
+
+        & h4 {
+            font-size: 20px;
+            max-width: 220px;
+            margin-bottom: 0;
+        }
+
+        & .btn-base2 {
+            position: absolute;
+            width: 120px;
+            height: 50px;
+            right: -3.5%;
+            bottom: -5.5%;
+            font-size: 14px;
+            padding: 16px;
+            line-height: 1.1;
+        }
+    }
+
+    .logistica-section .paso .ver {
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
+
+        & i {
+            font-size: 20px;
+        }
+    }
+
+    .cta-section .etapa {
+        padding: 30px 20px;
+    }
+} 
+
+@media (max-width: 480px) {
+    .portada-section {
+
+        & .imagen-portada {
+            padding-bottom: 100px;
+        }
+
+        & .img-usuarios {
+            height: 50px;
+        }
+
+        & .usuarios {
+            align-items: center;
+            justify-content: end;
+
+            & .digito {
+                font-size: 28px;
+            }
+    
+            & span {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+    }
+
+    .gerena-section {
+
+        & .info {
+            padding: 50px 20px !important;
+        }
+
+        & .usuarios {
+            margin-bottom: 1rem;
+        }
+
+        & p {
+            margin: 1rem 0 !important;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .ahorra2 {
+        margin-top: 1rem;
+    }
+
+        .informacion  h4 {
+            font-size: 18px;
+            font-weight: 600;
+            max-width: 220px;
+            margin-bottom: 0;
+        }
+
+} 
+
